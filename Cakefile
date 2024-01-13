@@ -1,8 +1,15 @@
 ARG ALPINE_VERSION=3.19.0
 
-compile:
+devshell:
+    @devshell
+    FROM +toolchain
+
+toolchain:
     FROM alpine:${ALPINE_VERSION}
     RUN apk add --no-cache gcc libc-dev
+
+compile:
+    FROM +toolchain
     COPY hello.c .
     RUN gcc hello.c -o /hello
 
