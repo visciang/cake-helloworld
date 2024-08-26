@@ -11,7 +11,7 @@ toolchain:
 compile:
     FROM +toolchain
     COPY hello.c .
-    RUN gcc hello.c -o /hello
+    RUN gcc -Wall -Werror hello.c -o /hello
 
 app:
     FROM alpine:${ALPINE_VERSION}

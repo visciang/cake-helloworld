@@ -1,6 +1,6 @@
 # cake-helloworld
 
 ```
-cake run --progress plain --tag app app
-docker run --rm app
+cake run --progress plain --tag app:latest app
+docker run --rm app:latest
 ```
